@@ -21,7 +21,7 @@ for port in $(cat ports.ini); do
 
     # logic to validate if netcat really could be executed
     live_process=$(ps -o pid= 992)
-    if [[ "live_process" == "" ]] ; then
+    if [[ "$live_process" == "" ]] ; then
         echo "ERROR: netcat was not able to bind to port $port. Finishing"
         exit 1
     fi
